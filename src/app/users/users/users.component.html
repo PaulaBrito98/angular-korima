@@ -1,0 +1,41 @@
+<div class="card">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.code }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div class="card">
+  <p-table [value]="users" [tableStyle]="{ 'min-width': '25rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.nombre }}</td>
+        <td>{{ user.apellido}}</td>
+        <td>{{ user.edad }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

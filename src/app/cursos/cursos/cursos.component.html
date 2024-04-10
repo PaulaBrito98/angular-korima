@@ -1,0 +1,62 @@
+<div class="flex">
+<div class="p-4 shadow-2 border-round mr-4">
+  <div class="form-container">
+    <form [formGroup]="formularioCursos" (ngSubmit)="SaveDataCursos()" >
+      <div class="form-group">
+        <label for="nombre">Nombre
+        <span style="color: red">*</span></label>
+        <input type="text" id="nombre" formControlName="nombre" pInputText/>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripcion
+          <span style="color: red">*</span></label>
+        <input type="text" id="descripcion" formControlName="descripcion" pInputText/>
+      </div>
+      <div class="form-group">
+        <label for="duracion">Duracion
+          <span style="color: red">*</span></label>
+        <input type="number" id="duracion" formControlName="duracion" pInputNumber="git"/>
+      </div>
+      <div class="form-group">
+        <label for="instructor">Instructor
+          <span style="color: red">*</span></label>
+        <input type="text" id="instructor" formControlName="instructor" pInputText/>
+      </div>
+      <div class="form-group">
+        <label for="nivel">Nivel
+          <span style="color: red">*</span></label>
+        <input type="text" id="nivel" formControlName="nivel" pInputText/>
+      </div>
+      <button class="p-button-secondary" type="submit" [disabled]="formularioCursos.invalid|| formularioCursos.pristine">Guardar</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+<div class="flex-1 p-4 shadow-1 border-round">
+  <div class="card">
+    <p-table [value]="cursos" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Duracion</th>
+          <th>Instructor</th>
+          <th>Nivel</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-cursos>
+        <tr>
+          <td>{{ cursos.id }}</td>
+          <td>{{ cursos.nombre }}</td>
+          <td>{{ cursos.descripcion }}</td>
+          <td>{{ cursos.duracion }}</td>
+          <td>{{ cursos.instructor }}</td>
+          <td>{{ cursos.nivel }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
